@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var superCoolTitle: UIImageView!
+    @IBOutlet weak var superCoolButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +24,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 
+    @IBAction func buttonPressed(sender: AnyObject) {
+        background.hidden = false
+        superCoolTitle.hidden = false
+        superCoolButton.hidden = true
+    }
 }
 
